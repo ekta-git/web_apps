@@ -7,7 +7,7 @@ Created on Tue Jan 11 21:18:25 2022
 
 import streamlit as st
 import pandas as pd
-import seaborn as sns
+
 
 st.title("DATA ANALYSIS")
 st.subheader("Data Analysis using python (in CSV format)")
@@ -33,10 +33,10 @@ if upload is not None:
     
     if data_shape=='Rows':
         st.text("Number of Rows")
-        st.write(data_shape.shape[0])
+        st.write(data.shape[0])
     if data_shape=='Columns':
         st.text("Number of Columns")
-        st.write(data_shape.shape[1])
+        st.write(data.shape[1])
 
    
 if upload is not None:
@@ -76,7 +76,7 @@ if st.button("About App"):
 
 
 
-#  download updated file
+#  downloading 
 
 if st.button('Save DataFrame'):
     open('data_streamlit.csv','w').write(data.to_csv())
